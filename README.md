@@ -5,7 +5,7 @@ Testing GH App for the Checks API
 
 ### Get a webhook URL
 
-Use [smee](smee.io) to get a webhook URL that you can use for testing. Follow the directions on the site to install the smee CLI locally if you haven't already.
+Use [smee](https://smee.io) to get a webhook URL that you can use for testing. Follow the directions on the site to install the smee CLI locally if you haven't already.
 
 ### Create a GitHub App
 Follow [these](https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app) steps to create a GitHub App. Use the URL generated from smee as the webhook URL. Save the changes and make sure to create a private key. Save this file somewhere you'll remember!
