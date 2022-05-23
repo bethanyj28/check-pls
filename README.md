@@ -11,7 +11,7 @@ Use [smee](https://smee.io) to get a webhook URL that you can use for testing. F
 Follow [these](https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app) steps to create a GitHub App. Use the URL generated from smee as the webhook URL. Save the changes and make sure to create a private key. Save this file somewhere you'll remember!
 
 ### Set up local environment
-Clone this repo locally. Copy the `.envconfig` file and name it `.env`. For `APP_GITHUB_APP_INTEGRATION_ID`, you'll use the App ID listed in the about information of your app on GitHub. For `APP_GITHUB_APP_PRIVATE_KEY`, you'll use the contents of that pem file that you created earlier (replace the newlines with `\n`).
+Clone this repo locally. Copy the `.envconfig` file and name it `.env`. For `APP_GITHUB_APP_INTEGRATION_ID`, you'll use the App ID listed in the about information of your app on GitHub. For `APP_GITHUB_APP_PRIVATE_KEY`, you'll use the contents of that pem file that you created earlier (replace the newlines with `\n` and wrap the key with quotes).
 
 ### Run the app locally
 Run `make build && make run`.
