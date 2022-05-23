@@ -20,8 +20,6 @@ Run `smee -u <SMEE_URL> -t http://127.0.0.1:8080/api/github/hook`.
 
 Make sure the app is installed to a repo of your choosing. Now you are set up!
 
-## TODO
+## Adding an event handler
 
-- [x] Set up scaffold to receive events
-- [ ] Handle `push` event to create a check suite
-- [ ] Handle `check_run` event to log out the check run
+In [`cmd/server/handlers.go`](cmd/server/handlers.go), add a struct that implements the [`githubapp.EventHandler` interface](https://github.com/palantir/go-githubapp#usage) with your desired event.
