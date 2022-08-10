@@ -22,4 +22,4 @@ Make sure the app is installed to a repo of your choosing. Now you are set up!
 
 ## Adding an event handler
 
-In [`cmd/server/handlers.go`](cmd/server/handlers.go), add a struct that implements the [`githubapp.EventHandler` interface](https://github.com/palantir/go-githubapp#usage) with your desired event.
+In [`cmd/server/handlers.go`](cmd/server/handlers.go), add a struct that implements the [`githubapp.EventHandler` interface](https://github.com/palantir/go-githubapp#usage) with your desired event. Initialize the handler in the [`initHandlers` function in `main.go`](https://github.com/bethanyj28/check-pls/blob/main/cmd/server/main.go#L74).
