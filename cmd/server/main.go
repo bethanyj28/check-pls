@@ -47,8 +47,8 @@ func main() {
 		logger.Fatal().Err(err).Msg("failed to create client creator")
 	}
 
-	ph, crh := initHandlers(cc)
-	webhookHandler := githubapp.NewDefaultEventDispatcher(ghConfig, ph, crh)
+	ph, crh, prh, csh := initHandlers(cc)
+	webhookHandler := githubapp.NewDefaultEventDispatcher(ghConfig, ph, crh, prh, csh)
 
 	http.Handle(githubapp.DefaultWebhookRoute, webhookHandler)
 
@@ -70,6 +70,6 @@ func newAppConfig(c Config) githubapp.Config {
 	return ghc
 }
 
-func initHandlers(cc githubapp.ClientCreator) (*PushHandler, *CheckRunHandler) {
-	return &PushHandler{ClientCreator: cc}, &CheckRunHandler{ClientCreator: cc}
+func initHandlers(cc githubapp.ClientCreator) (*PushHandler, *CheckRunHandler, *PullRequestHandler, *CheckSuiteHandler) {
+	return &PushHandler{ClientCreator: cc}, &CheckRunHandler{ClientCreator: cc}, &PullRequestHandler{ClientCreator: cc}, &CheckSuiteHandler{ClientCreator: cc}
 }
